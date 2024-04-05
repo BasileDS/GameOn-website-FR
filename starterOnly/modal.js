@@ -1,9 +1,9 @@
 function editNav() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
+  let header = document.getElementById("myTopnav");
+  if (header.className === "topnav") {
+    header.className += " responsive";
   } else {
-    x.className = "topnav";
+    header.className = "topnav";
   }
 }
 
@@ -20,4 +20,7 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
-
+// Close modal form
+function closeModal() {
+  modalbg.style.display = "none";
+}
