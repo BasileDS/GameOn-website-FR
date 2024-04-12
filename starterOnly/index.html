@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="modal.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans" />
+    <script src="modal.js" defer></script>
   </head>
   <body>
     <header class="topnav" id="myTopnav">
@@ -37,7 +38,12 @@
         <div class="content">
           <span class="modalClose"></span>
           <div class="modal-body">
-            <form name="reserve" action="index.html" method="get">
+            <div class="formSuccess hidden">
+              <p>Merci pour <br>
+                votre inscription !</p>
+                <button class="outlined-btn" id="newRegBtn" >Nouvelle inscription</button>
+            </div>
+            <form name="reserve" action="index.html" method="get" novalidate >
               <div
                 class="formData">
                 <label>Prénom</label><br>
@@ -45,8 +51,7 @@
                   class="text-control"
                   type="text"
                   id="first"
-                  name="first"
-                  minlength="2"
+                  name="first"       
                 /><br>
               </div>
               <div
@@ -82,7 +87,12 @@
               <div
                 class="formData">
                 <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                <input
+                  type="number"
+                  class="text-control"
+                  id="quantity"
+                  name="quantity"
+                  >
               </div>
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
               <div
@@ -93,6 +103,7 @@
                   id="location1"
                   name="location"
                   value="New York"
+                  checked
                 />
                 <label class="checkbox-label" for="location1"><span class="checkbox-icon"></span>New York</label>
                 <input
@@ -155,6 +166,7 @@
               <input
                 class="btn-submit"
                 type="submit"
+                id="submit"
                 class="button"
                 value="C'est parti"
               />
@@ -166,6 +178,5 @@
     <footer>
       <p class="copyrights">Copyright 2014 - 2022, GameOn Inc.</p>
     </footer>
-    <script src="modal.js"></script>
   </body>
 </html>
