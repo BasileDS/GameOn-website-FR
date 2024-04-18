@@ -102,7 +102,7 @@ img {
 }
 
 .footer {
-  padding: 10px 2vw 10pw 2vw;
+  padding: 10px 2vw 10px 2vw;
   margin: 0 20px;
   font-family: var(--font-slab);
 }
@@ -146,6 +146,12 @@ img {
   z-index: 1;
 }
 
+.content-close {
+  animation-name: modalclose;
+  animation-duration: var(--modal-duration);
+}
+
+
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
@@ -181,7 +187,7 @@ input {
   display: block;
   margin-top: 7px;
   margin-bottom: 7px;
-  text-align: right;
+  text-align: left;
   line-height: 0.3;
   opacity: 0;
   transition: 0.3s;
@@ -193,6 +199,10 @@ input {
 
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
+}
+
+.formData[data-error-visible="false"] .text-control {
+  border: 2px solid #48e572;
 }
 
 .formSuccess {
@@ -495,7 +505,7 @@ input {
   }
 
   .main-navbar {
-    background-color: none;
+    background-color: transparent;
     box-shadow: none;
   }
 
@@ -631,5 +641,16 @@ input {
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes modalclose {
+  from {
+    opacity: 1;
+  }
+  to {
+    
+    transform: translateY(-150px);
+    opacity: 0;
   }
 }
