@@ -126,11 +126,11 @@ function checkLenght(e, n) {
 
 // check if the string contains anything other than alphabetical letters
 function checkCaracters(e) {
-  const regex = /^[a-zA-Z]+(?: [a-zA-Z]+)*$/;
+  const regex = /^[a-zA-Z]+(?:[-\s][a-zA-Z]+)*$/;
   const result = regex.test(e.value);
   if (!result) {
     e.closest('.formData').setAttribute('data-error-visible', 'true');
-    e.closest('.formData').setAttribute('data-error', 'Le champ doit contenir uniquement des lettres');
+    e.closest('.formData').setAttribute('data-error', 'Ce champ ne peut contenir que des lettres');
     return false;
   } else {
     e.closest('.formData').setAttribute('data-error-visible', 'false');
